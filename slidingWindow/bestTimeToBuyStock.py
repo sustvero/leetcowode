@@ -14,3 +14,5 @@ class Solution:
                 max_profit = prices[i] - min_price
         
         return max_profit
+
+# Total runtime: O(n)
