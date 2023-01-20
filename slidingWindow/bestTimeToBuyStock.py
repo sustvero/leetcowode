@@ -15,4 +15,4 @@ class Solution:
         
         return max_profit
 
-# Total runtime: O(n)
+# this solution has runtime O(n)
