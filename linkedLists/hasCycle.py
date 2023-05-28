@@ -7,17 +7,25 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
-        # indicate that we have visited the node already by changing its value
-        # given nodes will only have values up to 10 ** 5
-        # so to indicate we've visited the node, we set its value to 10 ** 5 + 1
+        # potential - change the value of the linked list to indicate it has been visited already
 
-        curnode = head
-        while curnode:
-            if curnode.val == (10 ** 5) + 1:
+        # have a slow pointer (increments by 1) and a fast pointer (increments by 2)
+
+        # edge case:
+        # 0 nodes
+        # 1 node
+
+        if not head or not head.next:
+            return False
+        
+        slow = head
+        fast = head.next
+
+        while fast and fast.next:
+            if slow == fast:
                 return True
-            curnode.val = (10 ** 5) + 1
-            curnode = curnode.next
+            
+            slow = slow.next
+            fast = fast.next.next
         
         return False
-
-# this solution has time complexity O(n)
