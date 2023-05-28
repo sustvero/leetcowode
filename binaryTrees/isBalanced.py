@@ -20,4 +20,4 @@ class Solution:
             return 0
         return 1 + max(self.depthCalculator(root.left), self.depthCalculator(root.right))
 
-# this solution has time complexity O(n) (?)
+# this solution has time complexity O(n^2) (?)
